@@ -1,0 +1,16 @@
+h1 {
+    font-size: 16px;
+    font-weight: 800;
+}
+
+header {
+    box-shadow: 0 0 0.875em rgba(0, 0, 0, 0.16);
+    background: #fff;
+    margin-bottom: 2em;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em 0;
+}
