@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background: #fafafa;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    padding: 0 1.25em;
+}

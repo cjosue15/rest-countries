@@ -1,0 +1,78 @@
+.filter-input {
+    width: 100%;
+    box-shadow: 0 0 0.875em rgba(0, 0, 0, 0.16);
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    color: #fafafa;
+}
+
+.filter-input input {
+    width: 100%;
+    height: 50px;
+    border: none;
+    padding-left: 20px;
+    color: #c0bfbf;
+}
+
+input::placeholder {
+    color: #c0bfbf;
+}
+
+.filter-input button {
+    width: 60px;
+    border: none;
+    background: #fff;
+    padding-left: 20px;
+    color: #c0bfbf;
+}
+
+button:focus,
+input:focus {
+    outline: none;
+}
+
+.countries-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.countrie {
+    width: 270px;
+    box-shadow: 0 0 0.875em rgba(0, 0, 0, 0.16);
+    margin-bottom: 2.5em;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.countrie-img img {
+    max-width: 100%;
+}
+
+.countrie-information {
+    padding: 1.5em;
+}
+
+.countrie-data {
+    margin-top: 1em;
+}
+
+.countrie-data p {
+    margin: 0 0 0.25em 0;
+}
+
+.countrie-data span {
+    font-weight: 600;
+}
+
+/* Filter */
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+a:hover {
+    color: #222222;
+}
