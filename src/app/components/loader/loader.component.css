@@ -1,0 +1,46 @@
+/* .loader-spin {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+} */
+
+.container-dots {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container-dots > div {
+    width: 1.25em;
+    height: 1.25em;
+    background: #202c37;
+    border-radius: 50%;
+    margin-right: 5px;
+    display: inline-block;
+    animation: 1.5s bounce infinite ease-in-out both;
+}
+
+.container-dots > div:last-child {
+    margin-right: 0px;
+}
+
+.container-dots .dots {
+    animation-delay: -0.3s;
+}
+
+.container-dots .dots2 {
+    animation-delay: -0.15s;
+}
+
+@keyframes bounce {
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}

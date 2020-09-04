@@ -8,15 +8,19 @@ import { map } from 'rxjs/operators';
 export class CountriesService {
     url: string;
     constructor(private http: HttpClient) {
-        this.url = 'https://restcountries.eu/rest/v2/all';
+        this.url = 'https://restcountries.eu/rest/v2/';
     }
 
     getAllCountries() {
-        return this.http.get(this.url).pipe(map((response: any) => response));
+        return this.http.get(`${this.url}all`).pipe(map((response: any) => response));
+    }
+
+    getCountriesByRegion(region) {
+        return this.http.get(`${this.url}${region}`).pipe(map((response: any) => response));
     }
 
     getSelects() {
-        return this.http.get(`${this.url}?fields=region`).pipe(
+        return this.http.get(`${this.url}all?fields=region`).pipe(
             map((response: any) => {
                 const result = response.reduce((a, { region }) => {
                     if (region) {

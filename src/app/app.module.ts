@@ -3,13 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { HeaderComponent } from './components/header/header.component';
-import { FilterComponent } from './components/filter/filter.component';
+import { HomeComponent } from './pages/home/home.component';
+import { AppRoutingModule } from './app.routing';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FilterComponent],
-  imports: [BrowserModule, HttpClientModule],
-  providers: [],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent, HomeComponent],
+    imports: [BrowserModule, HttpClientModule, AppRoutingModule, ComponentsModule],
+    providers: [],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}
