@@ -1,15 +1,23 @@
 <app-header></app-header>
-<button (click)="pedirMas()">Pedir más</button>
+<!-- <button (click)="pedirMas()">Pedir más</button> -->
 <div class="filters">
     <div class="container">
-        <div class="filter-input">
-            <button>
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </button>
-            <input type="text" class="control-input" placeholder="Search for a country..." />
-        </div>
-        <div class="filter-select">
-            <app-filter></app-filter>
+        <div class="filter-content">
+            <div class="filter-input">
+                <button>
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+                <input type="text" class="control-input" placeholder="Search for a country..." />
+            </div>
+            <div class="filter-select">
+                <ng-container *ngIf="regiones && regiones.length > 0">
+                    <app-filter
+                        [data]="regiones"
+                        [selected]="selected"
+                        (selectChange)="changeRegion($event)"
+                    ></app-filter>
+                </ng-container>
+            </div>
         </div>
     </div>
 </div>
@@ -19,7 +27,7 @@
         <div class="countries-content">
             <div class="countrie" *ngFor="let item of data | slice: 0:contador">
                 <div class="countrie-img">
-                    <img [src]="item.flag" [alt]="item.name" />
+                    <img [src]="item.flag" width="270" height="193" [alt]="item.name" />
                 </div>
                 <div class="countrie-information">
                     <h3>{{ item.name }}</h3>

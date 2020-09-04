@@ -1,10 +1,35 @@
+.filter-content {
+    display: flex;
+    flex-direction: column;
+}
+
 .filter-input {
     width: 100%;
     box-shadow: 0 0 0.875em rgba(0, 0, 0, 0.16);
     display: flex;
-    border-radius: 10px;
+    border-radius: 5px;
     overflow: hidden;
     color: #fafafa;
+    margin-bottom: 2em;
+}
+
+@media only screen and (min-width: 768px) {
+    .filter-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .filter-input {
+        width: 400px;
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .filter-input {
+        width: 550px;
+        margin-bottom: 0;
+    }
 }
 
 .filter-input input {
@@ -32,22 +57,30 @@ input:focus {
     outline: none;
 }
 
+.countries {
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
 .countries-content {
     display: grid;
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     justify-items: center;
+    gap: 5em;
 }
 
 .countrie {
     width: 270px;
     box-shadow: 0 0 0.875em rgba(0, 0, 0, 0.16);
-    margin-bottom: 2.5em;
     border-radius: 5px;
     overflow: hidden;
 }
 
 .countrie-img img {
     max-width: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 .countrie-information {
@@ -64,15 +97,4 @@ input:focus {
 
 .countrie-data span {
     font-weight: 600;
-}
-
-/* Filter */
-
-a {
-    text-decoration: none;
-    color: #000000;
-}
-
-a:hover {
-    color: #222222;
 }

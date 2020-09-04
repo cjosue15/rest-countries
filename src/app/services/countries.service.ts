@@ -19,12 +19,18 @@ export class CountriesService {
         return this.http.get(`${this.url}?fields=region`).pipe(
             map((response: any) => {
                 const result = response.reduce((a, { region }) => {
-                    a[region] = a[region] || { region, countries: 0 };
-                    a[region].countries += 1;
+                    if (region) {
+                        a[region] = a[region] || { region, countries: 0 };
+                        a[region].countries += 1;
+                    }
                     return a;
                 }, {});
 
-                return Object.values(result);
+                return Object.values(result).map((item: any) => ({
+                    id: item.region.toLocaleLowerCase(),
+                    text: item.region,
+                    count: item.countries,
+                }));
             })
         );
     }

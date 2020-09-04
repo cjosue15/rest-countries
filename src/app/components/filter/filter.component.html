@@ -1,11 +1,11 @@
-<label class="dropdown">
-    <div class="dd-button">Filter by Region</div>
+<label class="dropdown" #menu>
+    <div class="dd-button" (click)="abrirOpciones()">
+        {{ selected.text }}<i [class]="open ? 'fa fa-angle-up' : 'fa fa-angle-down'" aria-hidden="true"></i>
+    </div>
 
     <!-- <input type="checkbox" class="dd-input" id="test" /> -->
 
     <ul class="dd-menu">
-        <li>Action</li>
-        <li>Another action</li>
-        <li>Something else here</li>
+        <li *ngFor="let item of data" (click)="selectItem(item)">{{ item.text }} ({{ item.count }})</li>
     </ul>
 </label>
