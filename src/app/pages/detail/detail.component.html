@@ -1,0 +1,72 @@
+<div class="content-home" *ngIf="loading">
+    <app-loader></app-loader>
+</div>
+<div class="detail" *ngIf="!loading">
+    <div class="container">
+        <div class="detail-content">
+            <div class="back-button">
+                <button routerLink="/">
+                    <i class="fa fa-long-arrow-left" aria-hidden="true"></i> <span>Back</span>
+                </button>
+            </div>
+            <div class="countrie-content">
+                <div class="countrie-img">
+                    <img [src]="countrie.flag" alt="" />
+                </div>
+                <div class="countrie-information">
+                    <h2>{{ countrie.name }}</h2>
+                    <div class="content-flex">
+                        <div class="countrie-primary">
+                            <p>
+                                <span>Native Name:</span>
+                                {{ countrie.nativeName }}
+                            </p>
+                            <p>
+                                <span>Population:</span>
+                                {{ countrie.population | number }}
+                            </p>
+                            <p>
+                                <span>Region:</span>
+                                {{ countrie.region }}
+                            </p>
+                            <p>
+                                <span>Sub Region:</span>
+                                {{ countrie.subregion }}
+                            </p>
+                            <p>
+                                <span>Capital:</span>
+                                {{ countrie.capital }}
+                            </p>
+                        </div>
+                        <div class="countrie-secondary">
+                            <p>
+                                <span>Top Level Domain:</span>
+                                {{ domains }}
+                            </p>
+                            <p>
+                                <span>Currencies:</span>
+                                {{ currencies }}
+                            </p>
+                            <p>
+                                <span>Languages:</span>
+                                {{ languages }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="countrie-border">
+                        <span>Border Countries:</span>
+                        <div class="border-content">
+                            <a
+                                class="border-countrie"
+                                *ngFor="let item of borders"
+                                [routerLink]="['/', 'details', item.code]"
+                                >{{ item.name }}</a
+                            >
+                            <p *ngIf="!borders || (borders && borders.length === 0)">No data information 😞</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

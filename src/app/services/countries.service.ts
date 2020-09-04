@@ -19,6 +19,18 @@ export class CountriesService {
         return this.http.get(`${this.url}${region}`).pipe(map((response: any) => response));
     }
 
+    getCountrieDetail(name) {
+        return this.http.get(
+            `${this.url}alpha/${name}?fields=name;capital;population;flag;nativeName;region;subregion;topLevelDomain;currencies;languages;borders`
+        );
+    }
+
+    getBorderByCountrie(name) {
+        return this.http
+            .get(`${this.url}alpha/${name}?fields=name;alpha3Code`)
+            .pipe(map((response: any) => ({ name: response.name, code: response.alpha3Code.toLocaleLowerCase() })));
+    }
+
     getSelects() {
         return this.http.get(`${this.url}all?fields=region`).pipe(
             map((response: any) => {

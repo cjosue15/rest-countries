@@ -3,10 +3,6 @@ h1 {
     font-weight: 800;
 }
 
-a {
-    cursor: pointer;
-}
-
 header {
     box-shadow: 0 0 0.875em rgba(0, 0, 0, 0.16);
     background: #fff;
@@ -40,6 +36,10 @@ span i {
 
     span {
         font-size: 16px;
+    }
+
+    header {
+        margin-bottom: 3em;
     }
 }
 

@@ -1,52 +1,70 @@
-<app-header></app-header>
+<div class="content-home" *ngIf="loading">
+    <app-loader></app-loader>
+</div>
+<ng-container *ngIf="!loading">
+    <div class="filters">
+        <div class="container">
+            <div class="filter-content">
+                <div class="filter-input">
+                    <button>
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                    <input
+                        [formControl]="search"
+                        type="text"
+                        class="control-input"
+                        placeholder="Search for a country..."
+                        (keyup)="searchCountrie()"
+                    />
+                </div>
+                <div class="filter-select">
+                    <ng-container *ngIf="regiones && regiones.length > 0">
+                        <app-filter
+                            [data]="regiones"
+                            [selected]="selected"
+                            (selectChange)="changeRegion($event)"
+                        ></app-filter>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="filters">
-    <div class="container">
-        <div class="filter-content">
-            <div class="filter-input">
-                <button>
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-                <input type="text" class="control-input" placeholder="Search for a country..." />
+    <div class="countries">
+        <div class="container">
+            <div class="countries-content">
+                <div class="countrie" *ngFor="let item of data | slice: 0:contador">
+                    <a (click)="details(item.alpha3Code)">
+                        <div class="countrie-img">
+                            <img [src]="item.flag" width="270" height="193" [alt]="item.name" />
+                        </div>
+                        <div class="countrie-information">
+                            <h3>{{ item.name }}</h3>
+                            <div class="countrie-data">
+                                <p>
+                                    <span>Population:</span>
+                                    {{ item.population | number }}
+                                </p>
+                                <p>
+                                    <span>Region:</span>
+                                    {{ item.region }}
+                                </p>
+                                <p>
+                                    <span>Capital:</span>
+                                    {{ item.capital }}
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="notfound" *ngIf="!data || (data && data.length === 0)">
+                    😔 Sorry your search – <span>{{ search.value }}</span> – did not match any country in the
+                    <span>{{ selected.id === 'all' ? 'World' : selected.text }}.</span> 😔
+                </div>
             </div>
-            <div class="filter-select">
-                <ng-container *ngIf="regiones && regiones.length > 0">
-                    <app-filter
-                        [data]="regiones"
-                        [selected]="selected"
-                        (selectChange)="changeRegion($event)"
-                    ></app-filter>
-                </ng-container>
+            <div class="loader-more" *ngIf="loadingMore">
+                <app-loader></app-loader>
             </div>
         </div>
     </div>
-</div>
-<app-loader></app-loader>
-<div class="countries">
-    <div class="container">
-        <div class="countries-content">
-            <div class="countrie" *ngFor="let item of data | slice: 0:contador">
-                <div class="countrie-img">
-                    <img [src]="item.flag" width="270" height="193" [alt]="item.name" />
-                </div>
-                <div class="countrie-information">
-                    <h3>{{ item.name }}</h3>
-                    <div class="countrie-data">
-                        <p>
-                            <span>Population:</span>
-                            {{ item.population | number }}
-                        </p>
-                        <p>
-                            <span>Region:</span>
-                            {{ item.region }}
-                        </p>
-                        <p>
-                            <span>Capital:</span>
-                            {{ item.capital }}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+</ng-container>

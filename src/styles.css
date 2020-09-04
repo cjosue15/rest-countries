@@ -16,12 +16,23 @@ html {
 body {
     font-family: 'Nunito Sans', sans-serif;
     background: #fafafa;
+    min-height: 100vh;
 }
 
 h1,
 h2,
 h3 {
     margin: 0;
+}
+
+button:focus {
+    outline: none;
+}
+
+img {
+    max-width: 100%;
+    /* display: block; */
+    vertical-align: bottom;
 }
 
 .container {
@@ -34,4 +45,10 @@ h3 {
         max-width: 1400px;
         margin: 0 auto;
     }
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 }
