@@ -5,7 +5,8 @@ h1 {
 
 header {
     box-shadow: 0 0 0.875em rgba(0, 0, 0, 0.16);
-    background: #fff;
+    transition: var(--transition-back);
+    background: var(--elements);
     margin-bottom: 2em;
     width: 100%;
 }

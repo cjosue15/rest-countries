@@ -1,3 +1,22 @@
+:root {
+    --elements: #fff;
+    --color: #000;
+    --backgroundBase: #fafafa;
+    --transition-back: background 0.2s ease-in-out;
+    --hover-select: #f6f6f6;
+    --color-search: #c0bfbf;
+    --loader: #202c37;
+}
+
+.dark-mode {
+    --elements: #2b3945;
+    --backgroundBase: #202c37;
+    --color: #fff;
+    --hover-select: rgb(32 44 55 / 51%);
+    --color-search: #fff;
+    --loader: #fafafa;
+}
+
 html {
     box-sizing: border-box;
 }
@@ -15,8 +34,10 @@ html {
 
 body {
     font-family: 'Nunito Sans', sans-serif;
-    background: #fafafa;
+    background: var(--backgroundBase);
+    transition: var(--transition-back);
     min-height: 100vh;
+    color: var(--color);
 }
 
 h1,

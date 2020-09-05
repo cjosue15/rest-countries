@@ -11,19 +11,23 @@ button {
     padding: 10px 22px;
     display: flex;
     align-items: center;
-    background: #fff;
+    background: var(--elements);
+    transition: var(--transition-back);
     border: none;
     box-shadow: 0 0 0.875em rgba(0, 0, 0, 0.16);
     border-radius: 5px;
+    color: var(--color);
 }
 
 button span {
     font-size: 14px;
+    color: inherit;
 }
 
 button i {
     font-size: 16px;
     margin-right: 0.5em;
+    color: inherit;
 }
 
 .countrie-information {
@@ -54,7 +58,8 @@ h2 {
 }
 
 a.border-countrie {
-    background: #fff;
+    background: var(--elements);
+    transition: var(--transition-back);
     box-shadow: 0 0 0.875em rgba(0, 0, 0, 0.16);
     margin-right: 1em;
     margin-bottom: 1em;

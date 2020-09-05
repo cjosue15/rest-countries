@@ -2,7 +2,6 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    background: #fafafa;
     z-index: 3;
 }
 
@@ -17,7 +16,6 @@
     display: flex;
     border-radius: 5px;
     overflow: hidden;
-    color: #fafafa;
     margin-bottom: 2em;
 }
 
@@ -45,19 +43,22 @@
     height: 50px;
     border: none;
     padding-left: 20px;
-    color: #c0bfbf;
+    color: var(--color-search);
+    background: var(--elements);
+    transition: var(--transition-back);
 }
 
 input::placeholder {
-    color: #c0bfbf;
+    color: var(--color-search);
 }
 
 .filter-input button {
     width: 60px;
     border: none;
-    background: #fff;
+    background: var(--elements);
+    transition: var(--transition-back);
     padding-left: 20px;
-    color: #c0bfbf;
+    color: var(--color-search);
 }
 
 button:focus,
@@ -83,6 +84,8 @@ input:focus {
     box-shadow: 0 0 0.875em rgba(0, 0, 0, 0.16);
     border-radius: 5px;
     overflow: hidden;
+    background: var(--elements);
+    color: inherit;
 }
 
 .countrie-img img {
