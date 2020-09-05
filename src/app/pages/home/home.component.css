@@ -130,3 +130,11 @@ input:focus {
 .notfound span {
     font-weight: 800;
 }
+
+.count {
+    padding: 3em 0 1em 0;
+}
+.count p {
+    margin: 0;
+    color: var(--color);
+}
