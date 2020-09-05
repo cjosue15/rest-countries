@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CountriesService } from '../../services/countries.service';
 import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-home',
@@ -19,7 +20,8 @@ export class HomeComponent implements OnInit {
     espera: number;
     search: FormControl;
     // @ViewChild('search', { static: false }) search: ElementRef;
-    constructor(private countriesService: CountriesService, private router: Router) {
+    constructor(private countriesService: CountriesService, private router: Router, private titleService: Title) {
+        this.titleService.setTitle('Where in the world?');
         this.data = [];
         this.dataBefore = [];
         this.loading = false;

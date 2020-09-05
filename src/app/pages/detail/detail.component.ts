@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CountriesService } from '../../services/countries.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-detail',
@@ -15,7 +16,11 @@ export class DetailComponent implements OnInit {
     currencies: string;
     domains: string;
     borders: any[];
-    constructor(private activatedRoute: ActivatedRoute, private countriesService: CountriesService) {
+    constructor(
+        private activatedRoute: ActivatedRoute,
+        private countriesService: CountriesService,
+        private titleService: Title
+    ) {
         this.loading = false;
         this.languages = '';
         this.currencies = '';
@@ -34,21 +39,10 @@ export class DetailComponent implements OnInit {
     async getDetalle() {
         this.loading = true;
         this.borders = [];
-        // this.countriesService.getCountrieDetail(this.name).subscribe(
-        //     (response) => {
-        //         this.countrie = response;
-        //         this.languages = this.countrie.languages.map((item) => item.name).join(', ');
-        //         this.currencies = this.countrie.currencies.map((item) => item.name).join(', ');
-        //         this.domains = this.countrie.topLevelDomain.join(', ');
-        //         this.loading = false;
-        //     },
-        //     (error) => {
-        //         this.loading = false;
-        //     }
-        // );
 
         try {
             this.countrie = await this.countriesService.getCountrieDetail(this.name).toPromise();
+            this.titleService.setTitle(this.countrie.name);
             this.languages = this.countrie.languages.map((item) => item.name).join(', ');
             this.currencies = this.countrie.currencies.map((item) => item.name).join(', ');
             this.domains = this.countrie.topLevelDomain.join(', ');
