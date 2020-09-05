@@ -1,27 +1,71 @@
-# RestCountries
+# Rest Countries API
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+## ✍🏻 Descripción
 
-## Development server
+Realize este challenge de [Frontend Mentor](https://www.frontendmentor.io/) con Angular 9.1.1 en la cual se consume la API de [REST Countries API](https://restcountries.eu) para mostrar todos los paises, filtrar por region, buscar uno en especifico en la region seleccionada y su respectivo detalle de cada uno.
+También se añadio un switch para probar el dark mode, el cual se guarda en el Local Storage.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## 🚀 Comenzando
 
-## Code scaffolding
+Para iniciarlo debes clonarlo o descargarlo 😊, no olvides correr el comando 👇 para poder comenzar el proyecto.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+npm install
+```
 
-## Build
+Ingresar en la consola `ng serve` para poner a correr el dev server. Navegart en `http://localhost:4200/`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## 🎨 Demo
 
-## Running unit tests
+Puedes ver el demo aquí → [Rest Countries API](https://cjosue15.github.io/rest-countries/)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<details>
 
-## Running end-to-end tests
+<summary>🖥 Version Escritorio | Light Mode - Dark Mode</summary>
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+![](./examples/desktop-light.png)
 
-## Further help
+![](./examples/desktop-dark.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+</details>
+
+<details>
+
+<summary>🖥 Version Escritorio Detalles | Light Mode - Dark Mode</summary>
+
+![](./examples/desktop-details-light.png)
+
+![](./examples/desktop-details-dark.png)
+
+</details>
+
+<details>
+
+<summary>📱 Version Celular | Light Mode - Dark Mode</summary>
+
+![](./examples/movil-light.png)
+
+![](./examples/movil-dark.png)
+
+</details>
+
+<details>
+
+<summary>📱 Version Celular Detalles | Light Mode - Dark Mode</summary>
+
+![](./examples/movil-details-light.png)
+
+![](./examples/movil-details-dark.png)
+
+</details>
+
+## 🛠️ Construido con
+
+-   HTML
+-   CSS
+-   JS
+-   Angular 9
+
+---
+
+⌨️ con ❤️ por [Carlos Morales](https://github.com/cjosue15) 😊
