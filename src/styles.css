@@ -40,6 +40,10 @@ body {
     color: var(--color);
 }
 
+#main {
+    flex: 1;
+}
+
 h1,
 h2,
 h3 {
